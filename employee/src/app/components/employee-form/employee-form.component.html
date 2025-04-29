@@ -1,1 +1,15 @@
-<p>employee-form works!</p>
+<h2>Add Employee</h2>
+<form (ngSubmit)="onSubmit()">
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="employee.name" name="name" required>
+
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="employee.email" name="email" required>
+
+  <label>Department:</label>
+  <select [(ngModel)]="employee.department" name="department" required>
+    <option *ngFor="let dept of departments">{{ dept }}</option>
+  </select>
+
+  <button type="submit">Save</button>
+</form>
